@@ -4,10 +4,17 @@
         <meta charset="utf-8">
         <title>SmartMirror</title>
     </head>
-    <body>
+    <script type="text/javascript" src="clock.js"></script>
+    <body onload="startTime()">
         <h1>Hello</h1>
+        <div class="clock">
+            <div id="txt">
+
+            </div>
+        </div>
     </body>
     <script>
         require('./renderer.js');
     </script>
+
 </html>
