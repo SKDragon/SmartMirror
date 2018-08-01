@@ -14,14 +14,14 @@ function startTime() {
         h = h-12;
       }
   	document.getElementById('txt').innerHTML =
-  	h + ":" + m + "pm";
+  	h + ":" + m + ":" + s + "pm";
   }
   else{
       if (h==0){
           h = 12;
       }
   	document.getElementById('txt').innerHTML =
-  	h + ":" + m + "am";
+  	h + ":" + m + ":" + s + "am";
   }
 
   document.getElementById('date').innerHTML = n;
@@ -30,7 +30,7 @@ function startTime() {
 
 
   //
-  var t = setTimeout(startTime, 500);
+  var t = setTimeout(startTime, 1000);
 }
 
 
@@ -64,3 +64,5 @@ var weekNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday
 
   return weekNames[d] + ', ' + monthNames[monthIndex] + ' ' + day + ', '+ year;
 }
+
+startTime();

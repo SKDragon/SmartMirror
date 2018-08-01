@@ -8,11 +8,11 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 1920, height: 1080})
-  mainWindow.setFullScreen(true);
+  //mainWindow.setFullScreen(true);
 
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
-
+  mainWindow.loadFile('index.html');
+  mainWindow.setFullScreen(true);
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 
@@ -39,13 +39,13 @@ app.on('window-all-closed', function () {
   }
 })
 
-app.on('activate', function () {
-  // On OS X it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
-  if (mainWindow === null) {
-    createWindow()
-  }
-})
+// app.on('activate', function () {
+//   // On OS X it's common to re-create a window in the app when the
+//   // dock icon is clicked and there are no other windows open.
+//   if (mainWindow === null) {
+//     createWindow()
+//   }
+// })
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
