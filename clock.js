@@ -13,15 +13,15 @@ function startTime() {
       if (h>12){
         h = h-12;
       }
-  	document.getElementById('txt').innerHTML =
-  	h + ":" + m + ":" + s + "pm";
+  	document.getElementById('clock').innerHTML =
+  	h + ":" + m + ":" + s + " " + "pm";
   }
   else{
       if (h==0){
           h = 12;
       }
-  	document.getElementById('txt').innerHTML =
-  	h + ":" + m + ":" + s + "am";
+  	document.getElementById('clock').innerHTML =
+  	h + ":" + m + ":" + s + " " + "am";
   }
 
   document.getElementById('date').innerHTML = n;

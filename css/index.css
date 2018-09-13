@@ -1,0 +1,16 @@
+body{
+  text-align: center;
+  color: white;
+  background-color: black;
+}
+
+
+
+.clock_date{
+  font-size: 3em;
+  font-family: fantasy;
+}
+
+#clock{
+  font-size: 5em;
+}
