@@ -9,6 +9,7 @@
   "author": "Gavin Leung",
   "license": "ISC",
   "dependencies": {
-    "electron" : "^2.0.0"
+    "electron": "^2.0.0",
+    "googleapis": "^27.0.0"
   }
 }

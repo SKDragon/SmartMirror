@@ -1,3 +1,4 @@
+const {fs} = require('./calendar.js');
 function startTime() {
   var today = new Date();
   var h = today.getHours();
@@ -14,14 +15,14 @@ function startTime() {
         h = h-12;
       }
   	document.getElementById('clock').innerHTML =
-  	h + ":" + m + ":" + s + " " + "pm";
+  	h + ":" + m + ":" + s + " " + "PM";
   }
   else{
       if (h==0){
           h = 12;
       }
   	document.getElementById('clock').innerHTML =
-  	h + ":" + m + ":" + s + " " + "am";
+  	h + ":" + m + ":" + s + " " + "AM";
   }
 
   document.getElementById('date').innerHTML = n;
