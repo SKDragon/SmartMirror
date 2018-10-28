@@ -68,8 +68,9 @@ function getAccessToken(oAuth2Client, callback) {
  * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
  */
 function listEvents(auth) {
-  document.getElementById('calendar').innerHTML = "yes hello";
+  //document.getElementById('calendar').innerHTML = "yes hello";
   const calendar = google.calendar({version: 'v3', auth});
+  //var events = "";
   calendar.events.list({
     calendarId: 'primary',
     timeMin: (new Date()).toISOString(),
@@ -84,8 +85,8 @@ function listEvents(auth) {
       events.map((event, i) => {
         const start = event.start.dateTime || event.start.date;
         console.log(`${start} - ${event.summary}`);
-        document.getElementById('calendar').innerHTML = `${start} - ${event.summary}`;
-
+        //events += `${start} - ${event.summary}`;
+        document.getElementById('calendar').innerHTML = document.getElementById('calendar').innerHTML + "<br />" +`${start} - ${event.summary}`;
       });
     } else {
       console.log('No upcoming events found.');
