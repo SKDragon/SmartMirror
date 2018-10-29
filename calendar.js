@@ -70,7 +70,8 @@ function getAccessToken(oAuth2Client, callback) {
 function listEvents(auth) {
   //document.getElementById('calendar').innerHTML = "yes hello";
   const calendar = google.calendar({version: 'v3', auth});
-  //var events = "";
+  //var events = document.createElement("p");
+
   calendar.events.list({
     calendarId: 'primary',
     timeMin: (new Date()).toISOString(),
@@ -85,11 +86,14 @@ function listEvents(auth) {
       events.map((event, i) => {
         const start = event.start.dateTime || event.start.date;
         console.log(`${start} - ${event.summary}`);
-        //events += `${start} - ${event.summary}`;
-        document.getElementById('calendar').innerHTML = document.getElementById('calendar').innerHTML + "<br />" +`${start} - ${event.summary}`;
+        //var node= document.createTextNode(`${start} - ${event.summary}`);
+        //events.appendChild(node);
+        document.getElementById('cal').innerHTML = document.getElementById('cal').innerHTML + "<br />" +`${start} - ${event.summary}`;
       });
     } else {
       console.log('No upcoming events found.');
     }
   });
+  //var element = document.getElementById("calendar");
+  //element.appendChild(events);
 }
