@@ -4,13 +4,38 @@ body{
   background-color: black;
 }
 
+br{
+  margin-top: 1em;
+}
 
 
 .clock_date{
   font-size: 3em;
-  font-family: fantasy;
+  font-family: 'Audiowide', cursive;
 }
 
 #clock{
+  font-family: 'Audiowide', cursive;
+  background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
   font-size: 4em;
+  color: white;
 }
+#hr{
+  background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-size: 2em;
+    color: white;
+}
+
+font-family: 'Righteous', cursive;
+font-family: 'Audiowide', cursive;
+font-family: 'Press Start 2P', cursive;

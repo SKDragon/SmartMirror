@@ -1,5 +1,30 @@
 const {fs} = require('./calendar.js');
+var toggleSecs = 1;
+var toggle24hr = 0;
 function startTime() {
+
+
+  var clockbutton = document.getElementById("clock");
+  clockbutton.onclick = function(){
+    if (toggleSecs ==1){
+      toggleSecs = 0;
+    }
+    else{
+      toggleSecs = 1;
+    }
+  };
+
+  var hrbutton = document.getElementById("hr");
+  hrbutton.onclick = function(){
+    if (toggle24hr ==0){
+      toggle24hr = 1;
+    }
+    else{
+      toggle24hr = 0;
+    }
+  };
+
+
   var today = new Date();
   var h = today.getHours();
   //h = 0;
@@ -10,28 +35,56 @@ function startTime() {
 
   var n = formatDate(today);
 
-  if (checkHrPM(h)){
-      if (h>12){
-        h = h-12;
-      }
-  	document.getElementById('clock').innerHTML =
-  	h + ":" + m + ":" + s + " " + "PM";
+  //
+  if (toggle24hr == 0){
+    if (checkHrPM(h)){
+        if (h>12){
+          h = h-12;
+        }
+        if (toggleSecs == 1){
+    	    document.getElementById('clock').innerHTML =
+    	    h + ":" + m + ":" + s + " ";
+        }
+        else{
+          document.getElementById('clock').innerHTML =
+    	    h + ":" + m + " ";
+        }
+        document.getElementById('hr').innerHTML = "PM";
+    }
+    else{
+        if (h==0){
+            h = 12;
+        }
+        if (toggleSecs ==1){
+          document.getElementById('clock').innerHTML =
+        	h + ":" + m + ":" + s + " ";
+        }
+        else{
+          document.getElementById('clock').innerHTML =
+    	    h + ":" + m + " ";
+        }
+    	document.getElementById('hr').innerHTML = "AM";
+    }
   }
   else{
-      if (h==0){
-          h = 12;
-      }
-  	document.getElementById('clock').innerHTML =
-  	h + ":" + m + ":" + s + " " + "AM";
+    if (toggleSecs ==1){
+      document.getElementById('clock').innerHTML =
+      h + ":" + m + ":" + s + " ";
+    }
+    else{
+      document.getElementById('clock').innerHTML =
+      h + ":" + m + " ";
+    }
+    document.getElementById('hr').innerHTML = "--";
   }
+
+
 
   document.getElementById('date').innerHTML = n;
   //console.log(formatDate(today));
 
-
-
   //
-  var t = setTimeout(startTime, 1000);
+  var t = setTimeout(startTime, 500);
 }
 
 
