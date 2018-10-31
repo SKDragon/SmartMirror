@@ -8,9 +8,13 @@ function startTime() {
   clockbutton.onclick = function(){
     if (toggleSecs ==1){
       toggleSecs = 0;
+      document.getElementById("clock").style.paddingRight = "0px";
+      document.getElementById("clock").style.width = "3em";
     }
     else{
       toggleSecs = 1;
+      document.getElementById("clock").style.paddingRight = "0.2em";
+      document.getElementById("clock").style.width = "5em";
     }
   };
 

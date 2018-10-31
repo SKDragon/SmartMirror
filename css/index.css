@@ -25,7 +25,10 @@ br{
   font-size: 4em;
   color: white;
   padding: 0px 0px;
+  padding-left: 0.5em;
+  padding-right: 0.2em;
   margin: 0px 0px;
+  width: 5em;
   line-height: 1em;
 }
 #hr{
