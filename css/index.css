@@ -24,6 +24,9 @@ br{
     outline: none;
   font-size: 4em;
   color: white;
+  padding: 0px 0px;
+  margin: 0px 0px;
+  line-height: 1em;
 }
 #hr{
   background-color: Transparent;
@@ -35,6 +38,38 @@ br{
     font-size: 2em;
     color: white;
 }
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    font-size: 0.3em;
+    background-color: gray;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
 
 font-family: 'Righteous', cursive;
 font-family: 'Audiowide', cursive;
