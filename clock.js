@@ -8,13 +8,23 @@ function startTime() {
   clockbutton.onclick = function(){
     if (toggleSecs ==1){
       toggleSecs = 0;
-      document.getElementById("clock").style.paddingRight = "0px";
-      document.getElementById("clock").style.width = "3em";
+      if (toggle24hr==0){
+        document.getElementById("clock").style.width = "3.5em";
+      }
+      else{
+        document.getElementById("clock").style.width = "4em";
+      }
+      //document.getElementById("clock").style.width = "3em";
     }
     else{
       toggleSecs = 1;
-      document.getElementById("clock").style.paddingRight = "0.2em";
-      document.getElementById("clock").style.width = "5em";
+      if (toggle24hr==0){
+        document.getElementById("clock").style.width = "5em";
+      }
+      else{
+        document.getElementById("clock").style.width = "6em";
+      }
+      //document.getElementById("clock").style.width = "6em";
     }
   };
 
@@ -22,9 +32,21 @@ function startTime() {
   hrbutton.onclick = function(){
     if (toggle24hr ==0){
       toggle24hr = 1;
+      if (toggleSecs==1){
+        document.getElementById("clock").style.width = "6em";
+      }
+      else{
+        document.getElementById("clock").style.width = "4em";
+      }
     }
     else{
       toggle24hr = 0;
+      if (toggleSecs ==1){
+        document.getElementById("clock").style.width = "5em";
+      }
+      else{
+        document.getElementById("clock").style.width = "3.5em";
+      }
     }
   };
 
