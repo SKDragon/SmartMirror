@@ -111,7 +111,7 @@ function printEvents(eventStart, eventSum, eventDes){
 
   var table = document.getElementById("table");
   var num_rows = table.rows.length;
-  var row = table.insertRow(1);
+  var row = table.insertRow();
 
   var start = row.insertCell(0);
   var event = row.insertCell(1);
