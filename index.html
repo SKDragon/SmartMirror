@@ -29,18 +29,34 @@
         </div>
 
 
-        <div class="lower">
-          <div class="calendar">
-            <h2>calendar:</h2>
-            <p id=cal></p>
+        <div class="lower, clearfix">
+          <div class="leftside">
+            <div class="calendar">
+              <h2>calendar:</h2>
+              <!--<p class="table" id=cal></p>-->
+
+              <table class="table" id="table">
+                <tr class="headrow">
+                  <td class="divcell">Date</td>
+                  <td class="divcell">Event</td>
+                  <td class="divcell">Location</td>
+                </tr>
+              </table>
+
+
+
+
+            </div>
           </div>
+
           <div class="rightside">
-
+            <div class="picture">
+              <button type="button" name="togglepicture">TogglePicture</button>
+              <p>HERE</p>
+            </div>
           </div>
-
-
-
         </div>
+
     </body>
     <script>
         require('./renderer.js');

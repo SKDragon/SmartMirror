@@ -85,10 +85,18 @@ function listEvents(auth) {
       console.log('Upcoming 10 events:');
       events.map((event, i) => {
         const start = event.start.dateTime || event.start.date;
-        console.log(`${start} - ${event.summary}`);
+        console.log(`${start} - ${event.summary}: ${event.description}`);
         //var node= document.createTextNode(`${start} - ${event.summary}`);
         //events.appendChild(node);
-        document.getElementById('cal').innerHTML = document.getElementById('cal').innerHTML + "<br />" +`${start} - ${event.summary}`;
+        // if (`${events.description}` == "undefined"){
+        //   document.getElementById('cal').innerHTML = document.getElementById('cal').innerHTML + "<br />" +`${start} - ${event.summary}:` + " No Description";
+        // }
+        // else{
+        //   document.getElementById('cal').innerHTML = document.getElementById('cal').innerHTML + "<br />" +`${start} - ${event.summary}: ${event.description}`;
+        // }
+
+        printEvents(`${start}`, `${event.summary}`,`${event.description}`);
+
       });
     } else {
       console.log('No upcoming events found.');
@@ -96,4 +104,21 @@ function listEvents(auth) {
   });
   //var element = document.getElementById("calendar");
   //element.appendChild(events);
+}
+
+
+function printEvents(eventStart, eventSum, eventDes){
+
+  var table = document.getElementById("table");
+  var num_rows = table.rows.length;
+  var row = table.insertRow(1);
+
+  var start = row.insertCell(0);
+  var event = row.insertCell(1);
+  var desc = row.insertCell(2);
+
+  start.innerHTML = eventStart;
+  event.innerHTML = eventSum;
+  desc.innerHTML = eventDes;
+
 }

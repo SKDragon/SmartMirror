@@ -9,7 +9,7 @@ function startTime() {
     if (toggleSecs ==1){
       toggleSecs = 0;
       if (toggle24hr==0){
-        document.getElementById("clock").style.width = "3.5em";
+        document.getElementById("clock").style.width = "3.3em";
       }
       else{
         document.getElementById("clock").style.width = "4em";
@@ -45,7 +45,7 @@ function startTime() {
         document.getElementById("clock").style.width = "5em";
       }
       else{
-        document.getElementById("clock").style.width = "3.5em";
+        document.getElementById("clock").style.width = "3.3em";
       }
     }
   };
