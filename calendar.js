@@ -84,7 +84,10 @@ function listEvents(auth) {
     if (events.length) {
       console.log('Upcoming 10 events:');
       events.map((event, i) => {
-        const start = event.start.dateTime || event.start.date;
+        //const start = event.start.dateTime || event.start.date;
+        // parse event
+        const start = parseDate(event.start.dateTime, event.start.date);
+
         console.log(`${start} - ${event.summary}: ${event.description}`);
         //var node= document.createTextNode(`${start} - ${event.summary}`);
         //events.appendChild(node);
@@ -95,7 +98,7 @@ function listEvents(auth) {
         //   document.getElementById('cal').innerHTML = document.getElementById('cal').innerHTML + "<br />" +`${start} - ${event.summary}: ${event.description}`;
         // }
 
-        printEvents(`${start}`, `${event.summary}`,`${event.description}`);
+        printEvents(`${start}`, `${event.summary}`,event.location);
 
       });
     } else {
@@ -120,5 +123,18 @@ function printEvents(eventStart, eventSum, eventDes){
   start.innerHTML = eventStart;
   event.innerHTML = eventSum;
   desc.innerHTML = eventDes;
+
+}
+
+function parseDate(dateTime, date){
+
+  if (date != null){
+    return date;
+  }
+  else{
+    var dates = dateTime.split('T');
+    return dates[0];
+  }
+
 
 }
