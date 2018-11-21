@@ -86,7 +86,8 @@ function listEvents(auth) {
       events.map((event, i) => {
         //const start = event.start.dateTime || event.start.date;
         // parse event
-        const start = parseDate(event.start.dateTime, event.start.date);
+        const start = parseDate(event.start.dateTime, event.start.date, event.end.dateTime, "date");
+        const time = parseDate(event.start.dateTime, event.start.date, event.end.dateTime, "time");
 
         console.log(`${start} - ${event.summary}: ${event.description}`);
         //var node= document.createTextNode(`${start} - ${event.summary}`);
@@ -98,7 +99,7 @@ function listEvents(auth) {
         //   document.getElementById('cal').innerHTML = document.getElementById('cal').innerHTML + "<br />" +`${start} - ${event.summary}: ${event.description}`;
         // }
 
-        printEvents(`${start}`, `${event.summary}`,event.location);
+        printEvents(`${start}`, `${event.summary}`,`${time}`,event.location, event.description);
 
       });
     } else {
@@ -110,31 +111,100 @@ function listEvents(auth) {
 }
 
 
-function printEvents(eventStart, eventSum, eventDes){
+function printEvents(eventStart, eventSum, eventTime, eventLoc, eventDesc){
 
   var table = document.getElementById("table");
   var num_rows = table.rows.length;
   var row = table.insertRow();
-
   var start = row.insertCell(0);
   var event = row.insertCell(1);
-  var desc = row.insertCell(2);
+  var time = row.insertCell(2);
+  //var loc = row.insertCell(2);
 
   start.innerHTML = eventStart;
   event.innerHTML = eventSum;
-  desc.innerHTML = eventDes;
+
+  if (eventTime == "null"){
+    time.innerHTML = "All Day";
+  }
+  else{
+    time.innerHTML = eventTime;
+  }
+
+
+
+
+  // if (eventLoc == null){
+  //   loc.innerHTML = "--";
+  // }
+  // else{
+  //   loc.innerHTML = eventLoc;
+  // }
+
+
+
+  row.setAttribute("class", "view-me");
+
+  // $(document).ready(function(){
+  //   // $(".content").click(function(){
+  //   //     $(this).closest('tr').next('tr.content-row').toggleClass('hidden');
+  //   // });
+  // });
+
+  $(function() {
+    $(row).after($('<tr class="hidden content-row"><td colspan="1">Location:</td><td colspan="2">'+ eventLoc +'</td></tr>'));
+    $(row).after($('<tr class="hidden content-row"><td colspan="1">Description:</td><td colspan="2">'+ eventDesc +'</td></tr>'));
+  });
+  // $(document).on('click', '.view-me', function() {
+  //   //$(this).closest('tr').toggleClass('hidden');
+  //   $(row).closest('tr').next('tr').toggle();
+  // });
+
+  // $(function(){
+  // 	$('tr:visible').click(function(){
+  // 		$(this).next().toggle()
+  // 	});
+  // });
+
+
+
 
 }
 
-function parseDate(dateTime, date){
+$(document).on('click', '.view-me', function() {
+  //$(this).closest('tr').toggleClass('hidden');
+  $(this).closest('tr').next('tr').toggle();
+  $(this).closest('tr').next('tr').next('tr').toggle();
+  $(this).closest('tr').next('td').next('td').next('td').css("height", "auto");
+});
+
+function parseDate(startDateTime, date, endDateTime,getDateOrTime){
 
   if (date != null){
-    return date;
+    if (getDateOrTime=="date"){
+      return date;
+    }
+    else if (getDateOrTime=="time"){
+      return "null";
+    }
   }
   else{
-    var dates = dateTime.split('T');
-    return dates[0];
+    var dates = startDateTime.split('T');
+    if (getDateOrTime=="date"){
+      return dates[0];
+    }
+    else if (getDateOrTime=="time"){
+      var start = dates[1].split("-")[0];
+      var end= endDateTime.split('T')[1].split("-")[0];
+      var time = start + "-" + end;
+      return time;
+      // var start = dates[1].split("-");
+      // return start;
+    }
   }
+}
 
 
+function showDetails(){
+  document.getElementById('test').innerHTML = "clicked";
 }

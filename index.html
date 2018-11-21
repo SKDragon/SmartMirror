@@ -39,7 +39,7 @@
                 <tr class="headrow">
                   <td class="divcell">Date</td>
                   <td class="divcell">Event</td>
-                  <td class="divcell">Location</td>
+                  <td class="divcell">Time</td>
                 </tr>
               </table>
 
@@ -50,18 +50,21 @@
           </div>
 
           <div class="rightside">
+            <button type="button" name="togglepicture" onclick="openfile()">TogglePicture</button>
             <div class="picture">
-              <button type="button" name="togglepicture">TogglePicture</button>
-              <p>HERE</p>
+
+              <p id="test">HERE</p>
             </div>
           </div>
         </div>
 
     </body>
     <script>
+        window.$ = window.jQuery = require('./jquery-3.3.1.min.js')
         require('./renderer.js');
+        //require('./jquery-3.3.1.min.js');
         const {fs} =require('./calendar.js');
-
+        //const {f} =require('./file_explorer.js');
         require('./clock.js');
 
         //require('./date.js');
