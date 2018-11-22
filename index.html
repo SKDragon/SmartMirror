@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>SmartMirror</title>
+        <title>SmartDisplay</title>
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link href="https://fonts.googleapis.com/css?family=Audiowide|Press+Start+2P|Righteous" rel="stylesheet">
     </head>
@@ -50,7 +50,7 @@
           </div>
 
           <div class="rightside">
-            <button type="button" name="togglepicture" onclick="openfile()">TogglePicture</button>
+            <button type="button" name="togglepicture" id="explorer" onclick="explorer();">TogglePicture</button>
             <div class="picture">
 
               <p id="test">HERE</p>
@@ -60,11 +60,12 @@
 
     </body>
     <script>
-        window.$ = window.jQuery = require('./jquery-3.3.1.min.js')
+        window.$ = window.jQuery = require('./jquery-3.3.1.min.js');
         require('./renderer.js');
         //require('./jquery-3.3.1.min.js');
-        const {fs} =require('./calendar.js');
+        //const {fs} =require('.//file_explorer.js');
         //const {f} =require('./file_explorer.js');
+        require('./file_explorer.js');
         require('./clock.js');
 
         //require('./date.js');
