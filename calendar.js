@@ -152,8 +152,18 @@ function printEvents(eventStart, eventSum, eventTime, eventLoc, eventDesc){
   // });
 
   $(function() {
-    $(row).after($('<tr class="hidden content-row"><td colspan="1">Location:</td><td colspan="2">'+ eventLoc +'</td></tr>'));
-    $(row).after($('<tr class="hidden content-row"><td colspan="1">Description:</td><td colspan="2">'+ eventDesc +'</td></tr>'));
+    if (eventLoc!= null){
+      $(row).after($('<tr class="hidden content-row"><td class="spacer"></td><td style="background-color:rgba(54, 39, 56, 0.6);width:30%;">Location:</td><td colspan="2" class="details">'+ eventLoc +'</td></tr>'));
+    }else{
+      $(row).after($('<tr class="hidden content-row"><td class="spacer"></td><td style="background-color:rgba(54, 39, 56, 0.6);width:30%;">Location:</td><td colspan="2" class="details">'+ "--" +'</td></tr>'));
+    }
+    if (eventDesc != null){
+      $(row).after($('<tr class="hidden content-row"><td class="spacer"></td><td style="background-color:rgba(54, 39, 56, 0.6);width:30%;">Description:</td><td colspan="2" class="details">'+ eventDesc +'</td></tr>'));
+    }else{
+      $(row).after($('<tr class="hidden content-row"><td class="spacer"></td><td style="background-color:rgba(54, 39, 56, 0.6);width:30%;">Description:</td><td colspan="2" class="details">'+ "--" +'</td></tr>'));
+    }
+
+    //$(row).next('td').next('td').attr('colspan',2);
   });
   // $(document).on('click', '.view-me', function() {
   //   //$(this).closest('tr').toggleClass('hidden');

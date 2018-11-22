@@ -3,6 +3,7 @@ body{
   color: white;
   background-color: black;
   overflow: hidden;
+  user-select: none;
 }
 
 br{
@@ -114,7 +115,7 @@ br{
   border:1px solid  rgba(#292929, 0);
   border-spacing:5px;/*cellspacing:poor IE support for  this*/
  /* border-collapse:separate;*/
- overflow: hidden;
+  overflow: hidden;
 }
 tr{
   color: white;
@@ -123,10 +124,11 @@ tr{
   font-size: 1.8em;
   overflow: hidden;
   #height: 1.8em;
+
 }
 td{
   float:left;/*fix for  buggy browsers*/
-  display:table-column;
+  display:table-cell;
   width:33%;
   background-color:rgba(54, 54, 54, 0.64);
   overflow: hidden;
@@ -147,6 +149,17 @@ td{
   display:table-column;
   width:33%;
   background-color:#363636;
+}
+
+
+.spacer{
+  width:3%;
+  background-color:rgba(40, 4, 85, 0);
+}
+.details{
+  display:table-cell;
+  background-color:rgba(54, 39, 56, 0.9);
+  width:64%;
 }
 
 .hidden {
