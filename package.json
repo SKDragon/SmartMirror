@@ -1,15 +1,15 @@
 {
   "name": "smartmirror",
   "version": "1.0.0",
-  "description": "Simple smart mirror",
+  "description": "Simple Smart Display",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
   "author": "Gavin Leung",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "electron": "^2.0.0",
+    "electron": "^3.0.0",
     "googleapis": "^27.0.0"
   }
 }

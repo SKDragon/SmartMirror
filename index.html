@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" ng-app="app">
     <head>
         <meta charset="utf-8">
         <title>SmartDisplay</title>
@@ -50,9 +50,10 @@
           </div>
 
           <div class="rightside">
-            <button type="button" name="togglepicture" id="explorer" onclick="explorer();">TogglePicture</button>
+            <!--<button type="button" name="togglepicture" id="explorer" onclick="explorer();">TogglePicture</button>-->
+            <button type="button" id="filePicker" ng-click="pickFile()">TogglePicture</button>
             <div class="picture">
-
+              <img ng-src="{{imagepath}}">
               <p id="test">HERE</p>
             </div>
           </div>
@@ -61,6 +62,8 @@
     </body>
     <script>
         window.$ = window.jQuery = require('./jquery-3.3.1.min.js');
+        require('./angular.min.js');
+        require('./angular-route.min.js');
         require('./renderer.js');
         //require('./jquery-3.3.1.min.js');
         //const {fs} =require('.//file_explorer.js');
