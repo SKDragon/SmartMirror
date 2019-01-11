@@ -51,9 +51,9 @@
 
           <div class="rightside">
             <!--<button type="button" name="togglepicture" id="explorer" onclick="explorer();">TogglePicture</button>-->
-            <button type="button" id="filePicker" ng-click="pickFile()">TogglePicture</button>
+            <button type="button" id="explorer" onclick="explorer();">TogglePicture</button>
             <div class="picture">
-              <img ng-src="{{imagepath}}">
+
               <p id="test">HERE</p>
             </div>
           </div>
@@ -62,8 +62,8 @@
     </body>
     <script>
         window.$ = window.jQuery = require('./jquery-3.3.1.min.js');
-        require('./angular.min.js');
-        require('./angular-route.min.js');
+        //require('./angular.min.js');
+        //require('./angular-route.min.js');
         require('./renderer.js');
         //require('./jquery-3.3.1.min.js');
         //const {fs} =require('.//file_explorer.js');
