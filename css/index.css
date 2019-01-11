@@ -170,8 +170,9 @@ td{
   cursor: pointer;
 }
 
-.picture{
-
+#pic{
+  max-width: 50%;
+  max-height: 50%;
 }
 
 
