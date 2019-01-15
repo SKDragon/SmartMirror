@@ -9,11 +9,7 @@
     <body>
         <h1>Smart Display V1</h1>
         <div class="upper">
-
         </div>
-
-
-
         <div class="middle">
           <div class="clock_date">
             <div class="tooltip">
@@ -32,9 +28,7 @@
         <div class="lower, clearfix">
           <div class="leftside">
             <div class="calendar">
-              <h2>calendar:</h2>
-              <!--<p class="table" id=cal></p>-->
-
+              <h2>Google Calendar</h2>
               <table class="table" id="table">
                 <tr class="headrow">
                   <td class="divcell">Date</td>
@@ -42,18 +36,13 @@
                   <td class="divcell">Time</td>
                 </tr>
               </table>
-
-
-
-
             </div>
           </div>
 
           <div class="rightside">
-            <!--<button type="button" name="togglepicture" id="explorer" onclick="explorer();">TogglePicture</button>-->
             <button type="button" id="explorer" onclick="explorer();">TogglePicture</button>
             <div class="picture">
-              <img id="pic" src="https://www.w3schools.com/images/w3schools_green.jpg" />
+              <img id="pic" src="" />
               <p id="test">HERE</p>
             </div>
           </div>
@@ -62,16 +51,9 @@
     </body>
     <script>
         window.$ = window.jQuery = require('./jquery-3.3.1.min.js');
-        //require('./angular.min.js');
-        //require('./angular-route.min.js');
         require('./renderer.js');
-        //require('./jquery-3.3.1.min.js');
-        //const {fs} =require('.//file_explorer.js');
-        //const {f} =require('./file_explorer.js');
         require('./file_explorer.js');
         require('./clock.js');
-
-        //require('./date.js');
     </script>
 
 </html>
